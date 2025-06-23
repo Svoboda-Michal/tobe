@@ -1,0 +1,21 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Since the site is static and served from main branch root,
+      # no build or deploy steps are needed.
+      # This workflow runs on push to main and can be extended if needed.
+
+      - name: Confirm deployment
+        run: echo "Website deployed to GitHub Pages from main branch."
